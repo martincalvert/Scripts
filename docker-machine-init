@@ -1,0 +1,8 @@
+#!/bin/bash
+if [[ "$(docker-machine status dev)" == "Running" ]]
+then
+  eval "$(docker-machine env dev)"
+else
+  docker-machine start dev
+  eval "$(docker-machine env dev)"
+fi
